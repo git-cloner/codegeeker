@@ -2,7 +2,7 @@
   "name": "codegeeker",
   "displayName": "Codegeeker",
   "description": "Code generator base on salesforce codegen",
-  "publisher": "gitclone.com",
+  "publisher": "git-cloner",
   "repository": {
     "type ": "git",
     "url": "https://github.com/git-cloner/codegeeker"
