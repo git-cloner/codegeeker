@@ -3,7 +3,11 @@
   "displayName": "Codegeeker",
   "description": "Code generator base on salesforce codegen",
   "publisher": "gitclone.com",
-  "version": "0.0.1",
+  "repository": {
+    "type ": "git",
+    "url": "https://github.com/git-cloner/codegeeker"
+  },
+  "version": "0.1.0",
   "keywords": [
     "codegen",
     "salesforce codegen",
@@ -16,7 +20,13 @@
     "Snippets"
   ],
   "activationEvents": [
-    "*"
+    "onLanguage:python",
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:java",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:go"
   ],
   "main": "./dist/extension.js",
   "contributes": {
