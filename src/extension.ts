@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 			return getCompletionItemsFromRemote(doc, pos);
 		}
 	}, ':');
-	const provider1 = vscode.languages.registerCompletionItemProvider(["python", "plaintext", "cpp", "c", "java", "javascript","go"], {
+	const provider1 = vscode.languages.registerCompletionItemProvider(["python", "plaintext", "cpp", "c", "java", "javascript", "go", "typescript"], {
 		async provideCompletionItems(doc, pos) {
 			return getCompletionItemsFromRemote(doc, pos);
 		}
@@ -32,23 +32,23 @@ async function getCompletionItemsFromRemote(doc: vscode.TextDocument, pos: vscod
 			"Content-Type": "application/json"
 		}
 	});
-	vscode.workspace.getConfiguration
 	var allCode = res.data.result;
 	let completionItems: vscode.CompletionItem[] = [];
 	if (allCode) {
 		var sl = allCode.split("\n");
 		for (var i = 0; i < sl.length; i++) {
-			const commandCompletion = new vscode.CompletionItem(sl[i]);
-			commandCompletion.kind = vscode.CompletionItemKind.Text;
-			commandCompletion.detail = allCode;
-			commandCompletion.documentation = new vscode.MarkdownString(allCode);
-			commandCompletion.insertText = new vscode.SnippetString(allCode);
-			completionItems.push(commandCompletion);
+			if (sl[i] !== undefined && (sl[i].trim()) !== "") {
+				const commandCompletion = new vscode.CompletionItem(sl[i]);
+				commandCompletion.kind = vscode.CompletionItemKind.Snippet;
+				commandCompletion.detail = allCode;
+				commandCompletion.documentation = new vscode.MarkdownString(allCode);
+				commandCompletion.insertText = new vscode.SnippetString(allCode);
+				completionItems.push(commandCompletion);
+				break;
+			}
 		}
-		return completionItems;
-	} else {
-		return undefined;
 	}
+	return completionItems;
 }
 
 
