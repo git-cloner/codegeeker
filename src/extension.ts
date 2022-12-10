@@ -16,7 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
 			return getCompletionItemsFromRemote(doc, pos);
 		}
 	}, '{');
-	context.subscriptions.push(provider, provider1);
+	const provider2 = vscode.languages.registerCompletionItemProvider(["python", "plaintext", "cpp", "c", "java", "javascript", "go", "typescript"], {
+		async provideCompletionItems(doc, pos) {
+			return getCompletionItemsFromRemote(doc, pos);
+		}
+	}, '!');
+	context.subscriptions.push(provider, provider1,provider2);
 }
 
 async function getCompletionItemsFromRemote(doc: vscode.TextDocument, pos: vscode.Position) {

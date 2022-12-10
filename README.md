@@ -23,6 +23,8 @@ If you use Python or PlainText, enter a colon (:) in the VScode editor to displa
 
 If it is C, C++, Go, JavaScript, Java, etc., enter { in the VScode editor to display the generated candidate code fragment.
 
+if you enter ! then codegne use openai ChatGPT(just test!!) 
+
 ## Implementation principle
 
 Enter triggerCharacters (:or {), post current line to the backend (https://github.com/git-cloner/codegen) to generate the code, and the backend uses salesforce's CodeGen model (https://github.com/salesforce/CodeGen) to generate the code snippet.
@@ -46,6 +48,8 @@ Enter triggerCharacters (:or {), post current line to the backend (https://githu
 如果是python或plaintext，在vscode编辑器中输入冒号（:），显示生成的候选代码片断。
 
 如果是c、c++、go、javascript、java等，在vscode编辑器中输入{，显示生成的候选代码片断。
+
+如果输入感叹号或者本行含有中文，则会调用openai ChatGPT。
 
 ### 3、实现原理
 
