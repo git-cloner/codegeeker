@@ -30,7 +30,7 @@ async function getCompletionItemsFromRemote(doc: vscode.TextDocument, pos: vscod
 		return undefined;
 	};
 	//vscode.window.showInformationMessage('Hello World from Codegeeker!');
-	const json = JSON.stringify({ "context": currentLine.replace("..", ""), "maxlength": 64 });
+	const json = JSON.stringify({ "context": currentLine.replace("..", ""), "maxlength": 32 });
 	const res = await axios.post('https://gitclone.com/aiit/codegen', json, {
 		headers: {
 			// eslint-disable-next-line @typescript-eslint/naming-convention

@@ -4,9 +4,13 @@ All notable changes to the "codegeeker" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.3.1]
+
+- change max-length from 64 to 32
+
 ## [0.3.0]
 
-- support openai ChatGPT
+- support openai GPT-J
 
 ## [0.2.0]
 
