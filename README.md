@@ -3,7 +3,7 @@ VSCode code generation Extension based on SalesForce CodeGen.
 
 Source code of Extension: https://github.com/git-cloner/codegeeker
 
-Source code of Codegen : https://github.com/git-cloner/codegen
+Source code of CodeGen : https://github.com/git-cloner/codegen
 
 Online demo: https://gitclone.com/aiit/codegen
 
@@ -23,7 +23,7 @@ If you use Python or PlainText, enter a colon (:) in the VScode editor to displa
 
 If it is C, C++, Go, JavaScript, Java, etc., enter { in the VScode editor to display the generated candidate code fragment.
 
-if you enter ! then codegne use openai ChatGPT(just test!!) 
+if you enter ! then CodeGen uses openai ChatGPT(just test!!) 
 
 ## Implementation principle
 
